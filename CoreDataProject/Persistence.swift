@@ -32,6 +32,7 @@ struct PersistenceController {
 
     init(inMemory: Bool = false) {
         container = NSPersistentContainer(name: "CoreDataProject")
+        container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy // necessary to make the Country shortName constraint work
         if inMemory {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
         }
