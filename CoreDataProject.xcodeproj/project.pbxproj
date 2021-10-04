@@ -13,8 +13,6 @@
 		E7E5DC80270B7FD1001B916A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7E5DC7F270B7FD1001B916A /* Preview Assets.xcassets */; };
 		E7E5DC82270B7FD1001B916A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E5DC81270B7FD1001B916A /* Persistence.swift */; };
 		E7E5DC85270B7FD1001B916A /* CoreDataProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7E5DC83270B7FD1001B916A /* CoreDataProject.xcdatamodeld */; };
-		E7E5DC8D270BA87C001B916A /* Movie+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E5DC8B270BA87C001B916A /* Movie+CoreDataClass.swift */; };
-		E7E5DC8E270BA87C001B916A /* Movie+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E5DC8C270BA87C001B916A /* Movie+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,8 +23,6 @@
 		E7E5DC7F270B7FD1001B916A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E7E5DC81270B7FD1001B916A /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		E7E5DC84270B7FD1001B916A /* CoreDataProject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataProject.xcdatamodel; sourceTree = "<group>"; };
-		E7E5DC8B270BA87C001B916A /* Movie+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Movie+CoreDataClass.swift"; path = "CoreDataProject/Movie+CoreDataClass.swift"; sourceTree = "<group>"; };
-		E7E5DC8C270BA87C001B916A /* Movie+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Movie+CoreDataProperties.swift"; path = "CoreDataProject/Movie+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,8 +39,6 @@
 		E7E5DC6C270B7FD0001B916A = {
 			isa = PBXGroup;
 			children = (
-				E7E5DC8B270BA87C001B916A /* Movie+CoreDataClass.swift */,
-				E7E5DC8C270BA87C001B916A /* Movie+CoreDataProperties.swift */,
 				E7E5DC77270B7FD0001B916A /* CoreDataProject */,
 				E7E5DC76270B7FD0001B916A /* Products */,
 			);
@@ -152,8 +146,6 @@
 				E7E5DC82270B7FD1001B916A /* Persistence.swift in Sources */,
 				E7E5DC7B270B7FD0001B916A /* ContentView.swift in Sources */,
 				E7E5DC85270B7FD1001B916A /* CoreDataProject.xcdatamodeld in Sources */,
-				E7E5DC8D270BA87C001B916A /* Movie+CoreDataClass.swift in Sources */,
-				E7E5DC8E270BA87C001B916A /* Movie+CoreDataProperties.swift in Sources */,
 				E7E5DC79270B7FD0001B916A /* CoreDataProjectApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
