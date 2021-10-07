@@ -22,9 +22,9 @@ struct CountriesListView: View {
         List {
             ForEach(countries, id: \.self) { country in
                 Section(header: Text(country.wrappedFullName)) {
-//                    ForEach(country.candyArray, id: \.self) { candy in
-//                        Text(candy.wrappedName)
-//                    }
+                    ForEach(country.candyArray, id: \.self) { candy in
+                        Text(candy.wrappedName)
+                    }
                 }
             }
         }
