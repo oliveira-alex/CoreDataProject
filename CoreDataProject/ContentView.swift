@@ -8,21 +8,40 @@
 import SwiftUI
 import CoreData
 
-struct ContentView: View {
+struct CountriesListView: View {
     @Environment(\.managedObjectContext) var moc
-    @FetchRequest(entity: Country.entity(), sortDescriptors: []) var countries: FetchedResults<Country>
+    @FetchRequest var countries: FetchedResults<Country>
     
+    init(sortDescriptor: NSSortDescriptor) {
+        let request: NSFetchRequest<Country> = Country.fetchRequest()
+        request.sortDescriptors = [sortDescriptor]
+        _countries = FetchRequest<Country>(fetchRequest: request)
+    }
+        
     var body: some View {
-        VStack {
-            List {
-                ForEach(countries, id: \.self) { country in
-                    Section(header: Text(country.wrappedFullName)) {
-                        ForEach(country.candyArray, id: \.self) { candy in
-                            Text(candy.wrappedName)
-                        }
-                    }
+        List {
+            ForEach(countries, id: \.self) { country in
+                Section(header: Text(country.wrappedFullName)) {
+//                    ForEach(country.candyArray, id: \.self) { candy in
+//                        Text(candy.wrappedName)
+//                    }
                 }
             }
+        }
+    }
+}
+
+struct ContentView: View {
+    @Environment(\.managedObjectContext) var moc
+        
+    @State private var ascending = true
+    var descriptors: NSSortDescriptor {
+        NSSortDescriptor(keyPath: \Country.shortName, ascending: ascending)
+    }
+
+    var body: some View {
+        VStack {
+            CountriesListView(sortDescriptor: descriptors)
             
             Button("Add") {
                 let candy1 = Candy(context: self.moc)
@@ -49,7 +68,17 @@ struct ContentView: View {
                 candy4.origin?.shortName = "CH"
                 candy4.origin?.fullName = "Switzerland"
                 
-                try? self.moc.save()
+                if self.moc.hasChanges {
+                    try? self.moc.save()
+                }
+            }
+            
+            Button("Ascending") {
+                ascending = true
+            }
+            
+            Button("Descending") {
+                ascending = false
             }
         }
     }
