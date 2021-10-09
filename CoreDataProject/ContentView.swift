@@ -20,13 +20,29 @@ struct ContentView: View {
     @State private var filterKey: FilterKey = .beginsWith
     @State private var filterValue = ""
 
+    
+    var contriesFetchRequest: FetchRequest<Country> {
+            let request: NSFetchRequest<Country> = Country.fetchRequest()
+            
+            let descriptorsArray = [NSSortDescriptor(keyPath: \Country.shortName, ascending: ascending)]
+            request.sortDescriptors = descriptorsArray
+            
+            var predicate: NSPredicate? {
+                if filterKey == .none || filterValue.isEmpty  {
+                    return nil
+                } else {
+                    let predicateString = "fullName \(filterKey.rawValue.uppercased())[c] '\(filterValue)'"
+                    return NSPredicate(format: predicateString)
+                }
+            }
+            request.predicate = predicate
+            
+        return FetchRequest<Country>(fetchRequest: request)
+    }
 
     var body: some View {
         VStack {
-            CountriesListView(descriptorParameter: ascending,
-                              predicateFirstParameter: filterKey,
-                              predicateSecondParameter: filterValue
-            )
+            CountriesListView(countries: contriesFetchRequest)
             
             Button("Add") {
                 let candy1 = Candy(context: moc)
