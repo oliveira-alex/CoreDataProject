@@ -12,9 +12,10 @@ struct CountriesListView: View {
     @Environment(\.managedObjectContext) var moc
     @FetchRequest var countries: FetchedResults<Country>
     
-    init(sortDescriptor: NSSortDescriptor) {
+    init(descriptorsArray: [NSSortDescriptor], predicate: NSPredicate?) {
         let request: NSFetchRequest<Country> = Country.fetchRequest()
-        request.sortDescriptors = [sortDescriptor]
+        request.sortDescriptors = descriptorsArray
+        request.predicate = predicate
         _countries = FetchRequest<Country>(fetchRequest: request)
     }
         
@@ -35,13 +36,17 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) var moc
         
     @State private var ascending = true
-    var descriptors: NSSortDescriptor {
-        NSSortDescriptor(keyPath: \Country.shortName, ascending: ascending)
+    var descriptors: [NSSortDescriptor] {
+        [NSSortDescriptor(keyPath: \Country.shortName, ascending: ascending)]
+    }
+    @State private var filterValue = ""
+    var predicate: NSPredicate? {
+        filterValue.isEmpty ? nil : NSPredicate(format: "fullName BEGINSWITH[c] %@", filterValue)
     }
 
     var body: some View {
         VStack {
-            CountriesListView(sortDescriptor: descriptors)
+            CountriesListView(descriptorsArray: descriptors, predicate: predicate)
             
             Button("Add") {
                 let candy1 = Candy(context: self.moc)
@@ -79,6 +84,18 @@ struct ContentView: View {
             
             Button("Descending") {
                 ascending = false
+            }
+            
+            Button("Begins with 'U'") {
+                filterValue = "U"
+            }
+            
+            Button("Begins with 'S'") {
+                filterValue = "S"
+            }
+            
+            Button("No filter") {
+                filterValue = ""
             }
         }
     }
