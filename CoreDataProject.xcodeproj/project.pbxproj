@@ -17,6 +17,7 @@
 		E7E5DC9A270BBEDF001B916A /* Candy+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E5DC96270BBEDF001B916A /* Candy+CoreDataProperties.swift */; };
 		E7E5DC9B270BBEDF001B916A /* Country+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E5DC97270BBEDF001B916A /* Country+CoreDataClass.swift */; };
 		E7E5DC9C270BBEDF001B916A /* Country+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E5DC98270BBEDF001B916A /* Country+CoreDataProperties.swift */; };
+		E7E5DC9E2711F72E001B916A /* CountriesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E5DC9D2711F72E001B916A /* CountriesListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		E7E5DC96270BBEDF001B916A /* Candy+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Candy+CoreDataProperties.swift"; path = "CoreDataProject/Candy+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E7E5DC97270BBEDF001B916A /* Country+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Country+CoreDataClass.swift"; path = "CoreDataProject/Country+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E7E5DC98270BBEDF001B916A /* Country+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Country+CoreDataProperties.swift"; path = "CoreDataProject/Country+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E7E5DC9D2711F72E001B916A /* CountriesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				E7E5DC78270B7FD0001B916A /* CoreDataProjectApp.swift */,
+				E7E5DC9D2711F72E001B916A /* CountriesListView.swift */,
 				E7E5DC7A270B7FD0001B916A /* ContentView.swift */,
 				E7E5DC7C270B7FD1001B916A /* Assets.xcassets */,
 				E7E5DC81270B7FD1001B916A /* Persistence.swift */,
@@ -162,6 +165,7 @@
 				E7E5DC9C270BBEDF001B916A /* Country+CoreDataProperties.swift in Sources */,
 				E7E5DC9B270BBEDF001B916A /* Country+CoreDataClass.swift in Sources */,
 				E7E5DC85270B7FD1001B916A /* CoreDataProject.xcdatamodeld in Sources */,
+				E7E5DC9E2711F72E001B916A /* CountriesListView.swift in Sources */,
 				E7E5DC79270B7FD0001B916A /* CoreDataProjectApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
